@@ -10,10 +10,12 @@ class vim::params {
   }
 
   $config_dir_path = $::osfamily ? {
+    RedHat  => '/etc',
     default => '/etc/vim',
   }
 
   $config_file_path = $::osfamily ? {
+    RedHat  => '/etc/vimrc',
     default => '/etc/vim/vimrc',
   }
 
@@ -33,11 +35,4 @@ class vim::params {
     default => 'Package[vim]',
   }
 
-  case $::osfamily {
-    'Debian': {
-    }
-    default: {
-      fail("${::operatingsystem} not supported.")
-    }
-  }
 }
