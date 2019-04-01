@@ -10,12 +10,12 @@ class vim::params {
   }
 
   $config_dir_path = $::osfamily ? {
-    RedHat  => '/etc',
+    'RedHat'  => '/etc',
     default => '/etc/vim',
   }
 
   $config_file_path = $::osfamily ? {
-    RedHat  => '/etc/vimrc',
+    'RedHat'  => '/etc/vimrc',
     default => '/etc/vim/vimrc',
   }
 
