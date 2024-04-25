@@ -40,8 +40,8 @@ class vim (
     $config_file_ensure = 'present'
   }
 
-  asser_type(Enum['absent','directory'], $config_dir_ensure )
-  asser_type(Enum['absent','present'], $config_file_ensure )
+  assert_type(Enum['absent','directory'], $config_dir_ensure )
+  assert_type(Enum['absent','present'], $config_file_ensure )
 
   anchor { 'vim::begin': } ->
   class { '::vim::install': } ->
