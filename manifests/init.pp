@@ -26,7 +26,7 @@ class vim (
   $background               = 'dark',
   $default_editor           = true,
 ) inherits ::vim::params {
-  $config_file_content = default_content($config_file_string, $config_file_template)
+  $config_file_content = extlib::default_content($config_file_string, $config_file_template)
 
   if $config_file_hash {
     create_resources('vim::define', $config_file_hash)
