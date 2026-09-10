@@ -20,8 +20,7 @@ class vim (
   Hash $config_file_options_hash                              = {},
   String $background                                          = 'dark',
   Boolean $default_editor                                     = true,
-) {
-  include vim::params
+) inherits vim::params {
   $config_file_content = extlib::default_content($config_file_string, $config_file_template)
 
   if $config_file_hash {
